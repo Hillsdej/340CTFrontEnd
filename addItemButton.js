@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    $("#addItembtn").click( function()
+    $("#addItembtn").click( function(event)
     {
         console.log("this is running:")
         event.preventDefault();
