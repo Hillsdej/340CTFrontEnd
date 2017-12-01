@@ -1,6 +1,6 @@
 var data;
 $(document).ready(function(){
-    $('#getStockBtn').click(function(){
+    
         $.ajax(
             {
                 type: "GET",
@@ -21,22 +21,6 @@ $(document).ready(function(){
                     console.log(errorThrown);
                 }
             });
-
-            
-            // function moveToTable(data){
-            //     var $table = $('<table/>');
-            //     for(var i=0; i<data.length; i++){
-            //         $table.append( '<tr><td>' + "hello" + '</td></tr>' );
-            //         $table.append( '<tr><td>' + data[i].item_name + '</td></tr>' );
-            //         $table.append( '<tr><td>' + data[i].item_price + '</td></tr>' );
-            //         $table.append( '<tr><td>' + data[i].quantity + '</td></tr>' );
-            //         $table.append( '<tr><td>' + data[i].maximum_stock + '</td></tr>' );
-            //         $table.append( '<tr><td>' + data[i].minimum_stock + '</td></tr>' );
-            //         $table.append( '<tr><td>' + data[i].date + '</td></tr>' );
-            //         // }
-            //     }
-            //     $('#here_table').append($table);
-            // }
 
             function buildHtmlTable() {
                 var columns = addAllColumnHeaders(data);
@@ -64,38 +48,11 @@ $(document).ready(function(){
                     for (var key in rowHash) {
                         if ($.inArray(key, columnSet) == -1){
                             columnSet.push(key);
-                            headerTr$.append($('<th/>').html(key));
                         }
                     }
                 }
-                $("#excelDataTable").append(headerTr$);
                 console.log(columnSet);
                 return columnSet;
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            return false;
-    });
+    return false;
 });

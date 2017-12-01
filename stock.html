@@ -10,6 +10,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
         <script src="getAllStockBtn.js"></script>
+        <script src="deleteStockBtn.js"></script>
         <style>
             body, html {
                 height: 100%;
@@ -45,9 +46,6 @@
 
         <div class="container">
             <h1>Stock</h1>
-            <!-- <table id="here_table">
-
-            </table> -->
 
             <table class="table table-hover" id="excelDataTable" >
                     <thead>
@@ -60,30 +58,23 @@
                                 <th id="r0c6">Minimum</th>
                                 <th id="r0c7">Date</th>
                             </tr>
-                        </thead>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+
             </table>
+            
+            <form id="deleteItemForm" method="del" role="form" action="http://localhost:8080/stock/">
+                <fieldset class="withBorder">
+                    <div class="form-group">
+                        <label for="inputItemName">Item ID:</label>
+                        <input type="text" class="form-control" name="item_id" id="inputItemName" placeholder="Item ID">                              
+                    </div>
+                </fieldset>
+            </form>
+            <button id="deleteStockItem">Delete</button>           
            
-
-            <!-- <table class="table table-hover" id="here_table">
-                <thead>
-                    <tr>
-                        <th id="r0c1">Item_ID</th>
-                        <th id="r0c2">Item_Name</th>
-                        <th id="r0c3">Item_Price (£)</th>
-                        <th id="r0c4">Quantity</th>
-                        <th id="r0c5">Maximum</th>
-                        <th id="r0c6">Minimum</th>
-                        <th id="r0c7">Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                </tbody>
-            </table> -->
-        </div>
-
-        <button id="getStockBtn" type="button" class="btn btn-primary">Check Stock</button>
-
-    
+        </div>   
     </body>
 </html>
