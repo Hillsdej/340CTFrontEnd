@@ -10,7 +10,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
         <script src="getOrders.js"></script>
-        <script src="deleteStockBtn.js"></script>
+        <script src="getOrderItem.js"></script>
         <style>
             body, html {
                 height: 100%;
@@ -45,7 +45,7 @@
         </nav>
 
         <div class="container">
-            <h1>Orders</h1>
+            <h3>Orders</h3>
 
             <table class="table table-hover" id="orderTable" >
                     <thead>
@@ -59,6 +59,21 @@
                     <tbody>
                         
                     </tbody>
+
+            </table>
+
+            <h3>Order Items</h3>
+            <table class="table table-hover" id="orderItemTable" >
+                <thead>
+                        <tr>
+                            <th id="r0c1">Order_ID</th>
+                            <th id="r0c2">Item_ID</th>
+                            <th id="r0c3">Amount</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
 
             </table>
             <!-- <div class="container">

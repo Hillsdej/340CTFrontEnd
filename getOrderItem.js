@@ -5,7 +5,7 @@ $(document).ready(function(){
             {
                 type: "GET",
                 crossDomain: true,
-                url: "http://localhost:8080/staff",
+                url: "http://localhost:8080/order/item",
                 xhrFields:{
                     withCredentials:true
                 },
@@ -34,7 +34,7 @@ $(document).ready(function(){
             
                         row$.append($('<td/>').html(cellValue));
                     }
-                    $("#staffTable").append(row$);
+                    $("#orderItemTable").append(row$);
                 }
             }
 
