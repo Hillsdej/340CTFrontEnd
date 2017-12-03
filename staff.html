@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- <link href="stock.css" rel="stylesheet" type="text/css"> -->
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+        <script src="getStaff.js"></script>
+        <script src="deleteStockBtn.js"></script>
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+                font-family: Helvetica, sans-serif;
+            }
+        </style>
+        <title>SmartMart</title>
+    </head>
+    <body style=color:black; data-spy="scroll" data-target=".arrowdownBtn" data-offset="50">
+        
+        <nav class="navbar navbar-default" data-spy="affix"data-offset-top="100">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- <a href="./hub.html" class="pull-left"> <img src="" alt="My Image" class="img-responsive" style=width:52px;height:55px;></a> -->
+                    <a class="navbar-brand" style="position:relative; left:7px; top:5px;"href="./hub.html">Smart Mart</a> 
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li style="position:relative;top:5px;"><a href="./hub.html">Home</a></li>
+                        <li style="position:relative;top:5px;"><a href="./orders.html">Orders</a></li>
+                        <li style="position:relative; top:5px"><a href="./stock.html">Stock Report</a></li>
+                        <li style="position:relative; top:5px"><a href="./staff.html">Staff</a></li>                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1>Staff</h1>
+
+            <table class="table table-hover" id="orderTable" >
+                    <thead>
+                            <tr>
+                                <th id="r0c1">Staff_ID</th>
+                                <th id="r0c2">Name</th>
+                                <th id="r0c3">Role</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+
+            </table>
+            <!-- <div class="container">
+                <div class="col-md-4">
+                    <div id = "deleteForm">
+                        <form id="deleteItemForm" method="del" role="form">
+                            <fieldset class="withBorder">
+                                <div class="form-group">
+                                    <label for="inputItemName">Item ID:</label>
+                                    <input type="text" class="form-control" name="item_id" id="inputItemName" placeholder="Item ID">                              
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                </div>
+                
+                <button id="deleteStockItem" class="btn btn-danger btn-default">Delete</button>
+                     -->
+               
+                    
+                
+            </div>
+        </div>   
+    </body>
+</html>
