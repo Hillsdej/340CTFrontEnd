@@ -22,6 +22,37 @@ $(document).ready(function(){
                 }
             });
 
+            $.ajax(
+                {
+                    type: "GET",
+                    crossDomain: true,
+                    url: "http://localhost:8080/stock",
+                    xhrFields:{
+                        withCredentials:true
+                    },
+                    contentType: "application/json",
+                    success: function(responseData, textStatus, jqXHR)
+                    {
+                        data = JSON.parse(responseData)
+                        console.log(data[0]);
+                        buildDropdown(data);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown)
+                    {
+                        console.log(errorThrown);
+                    }
+                });
+            
+                function buildDropdown(data){
+                    'use strict'
+                    var $dropdown = $("#orderItem-dropdown");                
+                    $.each(data, function(){
+                        $dropdown.append($("<option />").val(this.item_id).text(this.item_name));
+                    })
+                }
+
+
+
             function buildHtmlTable() {
                 var columns = addAllColumnHeaders(data);
             
@@ -55,4 +86,6 @@ $(document).ready(function(){
                 return columnSet;
             }
     return false;
+
+    
 });

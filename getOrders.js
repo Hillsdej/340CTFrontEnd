@@ -24,8 +24,18 @@ $(document).ready(function(){
 
             function buildHtmlTable() {
                 var columns = addAllColumnHeaders(data);
+                
             
                 for (var i = 0 ; i < data.length ; i++) {
+                    
+                    if (data[i].Arrived === 0){
+                        data[i].Arrived = "Pending"
+                    }
+                    else if (data[i].Arrived === 1) {
+                        data[i].Arrived = "Arrived"
+                    }
+                        
+
                     var row$ = $('<tr/>');
                     for (var colIndex = 0 ; colIndex < columns.length ; colIndex++) {
                         var cellValue = data[i][columns[colIndex]];
