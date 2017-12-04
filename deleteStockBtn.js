@@ -1,14 +1,13 @@
 var data;
 $(document).ready(function(){
-    $("#deleteStockItem").click( function(event)
-    {
-        var data = {};
-        $("#deleteItemForm").serializeArray().map(function(x){data[x.name] = x.value;});
+    
+    $('#deleteBtn').click(function(){ 
+        var option = document.getElementById('delete-dropdown').value;        
         $.ajax(
             {
                 type: "DELETE",
                 crossDomain: true,
-                url: "http://localhost:8080/stock/"+data.item_id,
+                url: "http://localhost:8080/stock/"+option,
                 xhrFields:{
                     withCredentials:true
                 },
@@ -26,5 +25,6 @@ $(document).ready(function(){
                 }
             });
     return false;
+        
     });
 });

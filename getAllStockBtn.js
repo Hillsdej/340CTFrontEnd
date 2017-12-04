@@ -15,6 +15,7 @@ $(document).ready(function(){
                     data = JSON.parse(responseData)
                     console.log(data[0]); 
                     buildHtmlTable();
+                    buildDropdown(data);
                 },
                 error: function(jqXHR, textStatus, errorThrown)
                 {
@@ -54,5 +55,16 @@ $(document).ready(function(){
                 console.log(columnSet);
                 return columnSet;
             }
+
+            function buildDropdown(data){
+                'use strict'
+                var $dropdown = $("#delete-dropdown");                
+                $.each(data, function(){
+                    $dropdown.append($("<option />").val(this.item_id).text(this.item_name));
+                })
+            }
+            
+           
+            
     return false;
 });

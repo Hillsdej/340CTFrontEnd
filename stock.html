@@ -10,6 +10,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
         <script src="getAllStockBtn.js"></script>
+        <script src="addStockBtn.js"></script>
         <script src="deleteStockBtn.js"></script>
         <style>
             body, html {
@@ -64,7 +65,42 @@
                     </tbody>
 
             </table>
+
             <div class="container">
+                <div class="col-md-4">
+                    <div id = "addStockItemForm">
+                        <form id="addStockForm" role="form">
+                            <fieldset class="withBorder">
+                                <div class="form-group">
+                                    <label for="inputItemName">Item_Name:</label>
+                                    <input type="text" class="form-control" name="item_name" id="inputItemName" placeholder="Item Name" required>                              
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputItemPrice">Item_Price:</label>
+                                    <input type="decimal" class="form-control" name="item_price" id="inputItemPrice" placeholder="Item Price"required>                              
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputQuantity">Quantity:</label>
+                                    <input type="number" class="form-control" name="quantity" id="inputItemName" placeholder="Quantity"required>                              
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputMaximum">Item_Maximum:</label>
+                                    <input type="number" class="form-control" name="maximum_stock" id="inputMaximum" placeholder="Item Maximum"required>                              
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputMinimum">Item_Minimum:</label>
+                                    <input type="number" class="form-control" name="minimum_stock" id="inputMinimum" placeholder="Item Minimum"required>                              
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div> 
+                <button id="addStockBtn" class="btn btn-default">Add Item</button>
+                <p id="result"></p>
+            </div>
+               
+                    
+            <!-- <div class="container">
                 <div class="col-md-4">
                     <div id = "deleteForm">
                         <form id="deleteItemForm" method="del" role="form">
@@ -78,13 +114,19 @@
                     </div>
 
                 </div>
-                
                 <button id="deleteStockItem" class="btn btn-danger btn-default">Delete</button>
-                    
-               
-                    
-                
+            </div> -->
+            <div class="dropdown">
+                <select id="delete-dropdown" name="deleteStock">
+                    <option selected="selected" disabled="disabled">Select Item to Delete</option>
+                </select>
             </div>
+            <button id="deleteBtn" class="btn btn-danger btn-default">Delete</button>
+
+
+            
+            
+                
         </div>   
     </body>
 </html>
