@@ -14,6 +14,7 @@ $(document).ready(function(){
                 {
                     data = JSON.parse(responseData)
                     console.log(data[0]); 
+                    buildDropdown(data);
                     buildHtmlTable();
                 },
                 error: function(jqXHR, textStatus, errorThrown)
@@ -21,6 +22,14 @@ $(document).ready(function(){
                     console.log(errorThrown);
                 }
             });
+
+            function buildDropdown(data){
+                'use strict'
+                var $dropdown = $("#updateOrder-dropdown");                
+                $.each(data, function(){
+                    $dropdown.append($("<option />").val(this.order_id).text(this.order_id));
+                })
+            }
 
             function buildHtmlTable() {
                 var columns = addAllColumnHeaders(data);
