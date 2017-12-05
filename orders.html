@@ -11,6 +11,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
         <script src="getOrders.js"></script>
         <script src="getOrderItem.js"></script>
+        <script src="addOrderItem.js"></script>
         <style>
             body, html {
                 height: 100%;
@@ -101,19 +102,61 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <form id="addStockForm" role="form">
+                            <form id="addOrderForm" role="form">
                                 <fieldset class="withBorder">
                                     <div class="form-group">
                                         <label for="inputItemName">Amount:</label>
-                                        <input type="number" class="form-control" name="item_name" id="inputItemName" placeholder="Item Name" required>                              
+                                        <input type="number" class="form-control" name="amount" id="inputItemName" placeholder="Amount" required>                              
                                     </div>
                                 </fieldset>
                             </form>
                         </div>
                     </div>
                 </div>
-                            
-                <button id="deleteBtn" class="btn btn-primary btn-default">Add Order</button>
+
+                
+                
+                <button id="checkAuthBtn" class="btn btn-primary" data-toggle="modal" href="#loginModal">Add Order</button>
+
+                <div class="container">
+                    <div class="modal fade" id="loginModal" role="dialog">
+                        <div class="modal-dialog">
+        
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" style="color:red; font-size:3em;" data-dismiss="modal">&times;</button>
+                                    <h2 style="color:turquoise; font-weight:bold;" class="text-center"><span class="glyphicon glyphicon-log-in"></span> Login</h2>
+                                    <p class="text-center">Must log in to authorise order</p>
+                                </div>
+        
+                                <div class="modal-body">
+                                    <form id="loginForm" role="form" method="post" action="http://localhost:8080/user/login">
+                                        <div class="form-group">
+                                            <div class="input-group">                                
+                                                <input type="text" class="form-control" name="username" id="uLogin" placeholder="Login">
+                                                <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+                                            </div>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" id="uPassword" name="password" placeholder="Password"required>
+                                                <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+        
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-danger btn-default pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove">
+                                    </span> Exit</button>
+                                    <button id ="addOrderItemBtn" type="button" class="btn btn-default btn-success pull-left"><span class="glyphicon glyphicon-off"></span> Submit</button>
+                                    <p id="loginResult"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     
                 
             </div>
