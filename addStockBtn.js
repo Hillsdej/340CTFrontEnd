@@ -24,6 +24,7 @@ $(document).ready(function()
                 error: function(jqXHR, textStatus, errorThrown){
                     var displayError = JSON.parse(JSON.stringify(jqXHR)).responseText;
                     alert(displayError);
+                    location.reload(true);
                 }
             });
             return false;
