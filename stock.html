@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="general.css" rel="stylesheet" type="text/css">
+        <link href="stock.css" rel="stylesheet" type="text/css">
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -48,6 +48,19 @@
         <div class="container">
             <h1>Stock</h1>
 
+            <div class="container">
+                <h3 class="text-center">Sales Summary</h3>
+                <form>
+                  <div class="form-group">
+                    <textarea readonly class="form-control text-center" rows="2">Best Seller: milk [sold: 200, profit: £240]&#13;Lowest Selling: cheese [sold 12, profit: £18]
+                    </textarea>
+                  </div>
+                </form>
+            </div>
+            <br>
+            <br>
+            
+
             <table class="table table-hover" id="excelDataTable" >
                     <thead>
                             <tr>
@@ -66,9 +79,15 @@
 
             </table>
 
+
+            <br>
+            <br>
+
             <div class="container">
                 <div class="col-md-4">
-                    <div id = "addStockItemForm">
+                    <div id = "addStockItemForm"style="position:relative; right:36px">
+                        <h3>Add item to stock</h3>
+                        <br>
                         <form id="addStockForm" role="form">
                             <fieldset class="withBorder">
                                 <div class="form-group">
@@ -95,38 +114,28 @@
                         </form>
                     </div>
                 </div> 
-                <button id="addStockBtn" class="btn btn-default">Add Item</button>
+                <div style="position:relative; top:460px; right:402px">
+                    <button id="addStockBtn" class="btn btn-primary">Add Item</button>
+                </div>
+               
                 <p id="result"></p>
             </div>
-               
-                    
-            <!-- <div class="container">
-                <div class="col-md-4">
-                    <div id = "deleteForm">
-                        <form id="deleteItemForm" method="del" role="form">
-                            <fieldset class="withBorder">
-                                <div class="form-group">
-                                    <label for="inputItemName">Item ID:</label>
-                                    <input type="text" class="form-control" name="item_id" id="inputItemName" placeholder="Item ID">                              
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-
+            
+            <br>
+            <br>
+            <div style="position:relative; bottom:486px; left:500px">
+                <h3>Delete Item from Stock</h3>
+                <br>
+                <div class="dropdown">
+                    <select id="delete-dropdown" name="deleteStock">
+                        <option selected="selected" disabled="disabled">Select Item to Delete</option>
+                    </select>
                 </div>
-                <button id="deleteStockItem" class="btn btn-danger btn-default">Delete</button>
-            </div> -->
-            <div class="dropdown">
-                <select id="delete-dropdown" name="deleteStock">
-                    <option selected="selected" disabled="disabled">Select Item to Delete</option>
-                </select>
+                <div style="position:relative; bottom:34px; left:188px">
+                    <button id="deleteBtn" class="btn btn-danger btn-default">Delete</button>
+                </div>
             </div>
-            <button id="deleteBtn" class="btn btn-danger btn-default">Delete</button>
-
-
             
-            
-                
         </div>   
     </body>
 </html>
