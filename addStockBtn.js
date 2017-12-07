@@ -19,10 +19,11 @@ $(document).ready(function()
                 contentType: "application/json",
                 success: function(responseData, textStatus, jqXHR)
                 {
-                    $("#result").html("<p style='color:green;'>Your data was submitted successfully</p>");
+                    alert("Your data was submitted successfully");
                 },
                 error: function(jqXHR, textStatus, errorThrown){
-                    $("#result").html("<p style='color:red;'>An error has occurred " + errorThrown + ".</p>");
+                    var displayError = JSON.parse(JSON.stringify(jqXHR)).responseText;
+                    alert(displayError);
                 }
             });
             return false;

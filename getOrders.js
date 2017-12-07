@@ -27,7 +27,9 @@ $(document).ready(function(){
                 'use strict'
                 var $dropdown = $("#updateOrder-dropdown");                
                 $.each(data, function(){
-                    $dropdown.append($("<option />").val(this.order_id).text(this.order_id));
+                    if(this.Arrived != 1){
+                        $dropdown.append($("<option />").val(this.order_id).text(this.order_id));
+                    }
                 })
             }
 

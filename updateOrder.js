@@ -28,7 +28,8 @@ $(document).ready(function()
                     location.reload(true);
                 },
                 error: function(jqXHR, textStatus, errorThrown){
-                    $("#result").html("<p style='color:red;'>An error has occurred " + errorThrown + ".</p>");
+                    var displayError = JSON.parse(JSON.stringify(jqXHR)).responseText;
+                    alert(displayError);
                 }
             });
             return false;
