@@ -30,7 +30,8 @@ $(document).ready(function()
                     location.reload(true);
                 },
                 error: function(jqXHR, textStatus, errorThrown){
-                    $("#result").html("<p style='color:red;'>An error has occurred " + errorThrown + ".</p>");
+                    alert("error: invalid login credentials")
+                    // $("#result").html("<p style='color:red;'>An error has occurred " + errorThrown + ".</p>");
                 }
             });
             return false;
