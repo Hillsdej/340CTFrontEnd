@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="stock.css" rel="stylesheet" type="text/css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+        <script src="getAllStockBtn.js"></script>
+        <script src="addStockBtn.js"></script>
+        <script src="deleteStockBtn.js"></script>
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+                font-family: Helvetica, sans-serif;
+            }
+        </style>
+        <title>SmartMart</title>
+    </head>
+    <body style=color:black; data-spy="scroll" data-offset="50">
+        
+        <nav class="navbar navbar-default" data-spy="affix"data-offset-top="1000">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- <a href="./hub.html" class="pull-left"> <img src="" alt="My Image" class="img-responsive" style=width:52px;height:55px;></a> -->
+                    <a class="navbar-brand" style="position:relative; left:7px; top:5px;"href="./hub.html">Smart Mart</a> 
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li style="position:relative;top:5px;"><a href="./orders.html">Orders</a></li>
+                        <li style="position:relative; top:5px"><a href="./stock.html">Stock Report</a></li>
+                        <li style="position:relative; top:5px"><a href="./staff.html">Staff</a></li>                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1>Stock</h1>
+
+            <div class="container">
+                <h3 class="text-center">Sales Summary</h3>
+                <form>
+                  <div class="form-group">
+                    <textarea readonly class="form-control text-center" rows="5">Best Seller: milk [sold: 200, profit: £240]&#13;Lowest Selling: cheese [sold 12, profit: £18]&#13;Bread Stock: Low&#13;Milk Stock: Order Placed&#13;Egg Stock: Awaiting Re-order
+                    </textarea>
+                  </div>
+                </form>
+            </div>
+            <br>
+            <br>
+            
+
+            <table class="table table-hover" id="excelDataTable" >
+                    <thead>
+                            <tr>
+                                <th id="r0c1">Item_ID</th>
+                                <th id="r0c2">Item_Name</th>
+                                <th id="r0c3">Item_Price (£)</th>
+                                <th id="r0c4">Quantity</th>
+                                <th id="r0c5">Maximum</th>
+                                <th id="r0c6">Minimum</th>
+                                <th id="r0c7">Date</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+
+            </table>
+
+
+            <br>
+            <br>
+
+            <div class="container">
+                <div class="col-md-4">
+                    <div id = "addStockItemForm"style="position:relative; right:36px">
+                        <h3>Add item to stock</h3>
+                        <br>
+                        <form id="addStockForm" role="form">
+                            <fieldset class="withBorder">
+                                <div class="form-group">
+                                    <label for="inputItemName">Item_Name:</label>
+                                    <input type="text" class="form-control" name="item_name" id="inputItemName" placeholder="Item Name" required>                              
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputItemPrice">Item_Price:</label>
+                                    <input type="decimal" class="form-control" name="item_price" id="inputItemPrice" placeholder="Item Price"required>                              
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputQuantity">Quantity:</label>
+                                    <input type="number" class="form-control" name="quantity" id="inputItemName" placeholder="Quantity"required>                              
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputMaximum">Item_Maximum:</label>
+                                    <input type="number" class="form-control" name="maximum_stock" id="inputMaximum" placeholder="Item Maximum"required>                              
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputMinimum">Item_Minimum:</label>
+                                    <input type="number" class="form-control" name="minimum_stock" id="inputMinimum" placeholder="Item Minimum"required>                              
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div> 
+                <div style="position:relative; top:460px; right:402px">
+                    <button id="addStockBtn" class="btn btn-primary">Add Item</button>
+                </div>
+               
+                <p id="result"></p>
+            </div>
+            
+            <br>
+            <br>
+            <div style="position:relative; bottom:486px; left:500px">
+                <h3>Delete Item from Stock</h3>
+                <br>
+                <div class="dropdown">
+                    <select id="delete-dropdown" name="deleteStock">
+                        <option selected="selected" disabled="disabled">Select Item to Delete</option>
+                    </select>
+                </div>
+                <div style="position:relative; bottom:34px; left:188px">
+                    <button id="deleteBtn" class="btn btn-danger btn-default">Delete</button>
+                </div>
+            </div>
+            
+        </div>   
+    </body>
+</html>
